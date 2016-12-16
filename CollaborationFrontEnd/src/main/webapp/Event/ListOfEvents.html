@@ -1,0 +1,35 @@
+<div class="container-fluid" data-ng-controller="EventController as ctrl">
+	 <div class="row"> 
+                <h3 class="text-center">LIST OF EVENT'S </h3>
+                 
+                 <div class="col-md-12" data-ng-repeat="event in ctrl.events | filter:{eventStatus :'1'}" style="background-color: #e7e7e7;">
+                 <hr>
+                     <h2>{{event.eventTitle}}</h2>    
+                     <div class="col-md-12">
+						<label>DESCRIPTION :{{event.eventDescription}}
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                         ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only 
+                         five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                         of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                         Lorem Ipsum.
+						</label><br>
+                     </div>
+                     <div class="col-md-6">
+                     	<label>EVENT LOCATION  : {{event.eventVenue}}</label><br>
+                     	<label>DATE : {{event.eventDate}}</label><br>
+                     	
+                     </div>
+                      <div class="col-md-6">
+                      <button data-ng-show="currentUser.userRole=='Admin'" data-ng-disabled="currentUser.userId==undefined" class="btn btn-danger pull-right" data-ng-click="ctrl.RemoveEvent(event.eventId)" onclick="return confirm('Are You Sure Want to Remove this??');">Remove Event</button>
+                      </div>
+                 
+	</div>
+	
+                 </div>
+             </div>
+
+
+
+
+
+

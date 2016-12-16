@@ -1,0 +1,32 @@
+<div class="container-fluid" data-ng-controller="BlogController as ctrl">
+<!-- <tr data-ng-show="!ctrl.myblogs">
+			<td colspan="5">
+				<p><div class="alert-danger"><h2>Sorry..!!No Blog Found.</h2></div></p>
+			</td>
+		</tr> -->
+	 <div class="row"> 
+                <h3 class="text-center">LIST OF MY PENDING BLOG'S </h3>
+                 
+                 <div class="col-md-12" data-ng-repeat="blog in ctrl.myblogs | filter : {approvalStatus : 'P'}">
+                    <hr>
+                     <h1>{{blog.blogTitle}}</h1>
+                    
+                     
+                         <em data-ng-repeat="user in ctrl.users | filter :{userId : blog.userId}">Posted By :- <a href=""><b>{{user.firstName}} {{user.lastName}}</b></a></em><em class="pull-right">Posted On :-  <a href="">{{blog.blogCreatedAt}}</a></em>
+                     <article><p>{{blog.blogDescription}}
+                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                         ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only 
+                         five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                         of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                         Lorem Ipsum.    
+                         </p></article>
+                    <!--  <a class="btn btn-blog pull-right marginBottom10" href="http://bootsnipp.com/user/snippets/2RoQ">READ MORE</a> --> 
+                 </div>
+             </div>
+</div>
+
+
+
+
+
+

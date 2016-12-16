@@ -1,0 +1,31 @@
+<div class="container-fluid" data-ng-controller="JobController as ctrl">
+	 <div class="row"> 
+                <h3 class="text-center">LIST OF NEW JOB'S </h3>
+                 
+                 <div class="col-md-12" data-ng-repeat="j in ctrl.myjobs" style="background-color: #e7e7e7;">
+                 <hr>
+                 <div class="raw" data-ng-repeat="job in ctrl.jobs | filter:{jobStatus :'1'} | filter:{jobId : j.jobId}">
+                    
+                     <h1>{{job.jobTitle}}</h1>    
+                     <div class="col-md-6">
+						<label>DESCRIPTION : {{job.jobDescription}}</label><br>
+                     	<label>JOB ROLE : {{job.jobRole}}</label><br>
+                    	<label>POSTED ON : {{job.postedOn}}</label><br>
+                     </div>
+                     <div class="col-md-6">
+                     	
+                     	<label>JOB LOCATION  : {{job.jobLocation}}</label><br>
+                     	<label>EMAIL ADDRESS : {{job.email}}</label><br>
+                    	<label>CONTACT  : {{job.contact}}</label><br>
+                     
+                     </div>
+                 </div>
+
+                 </div>
+             </div>
+</div>
+
+
+
+
+

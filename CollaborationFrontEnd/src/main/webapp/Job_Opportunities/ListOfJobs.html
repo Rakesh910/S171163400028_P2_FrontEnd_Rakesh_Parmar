@@ -1,0 +1,32 @@
+<div class="container-fluid" data-ng-controller="JobController as ctrl">
+	 <div class="row"> 
+                <h3 class="text-center">LIST OF NEW JOB'S </h3>
+                 
+                 <div class="col-md-12" data-ng-repeat="job in ctrl.jobs | filter:{jobStatus :'1'}" style="background-color: #e7e7e7;">
+                 <hr>
+                     <h1>{{job.jobTitle}}</h1>    
+                     <div class="col-md-6">
+						<label>DESCRIPTION : {{j.jobId}}{{job.jobDescription}}</label><br>
+                     	<label>JOB ROLE : {{job.jobRole}}</label><br>
+                    	<label>POSTED ON : {{job.postedOn}}</label><br>
+                    	<button data-ng-disabled="currentUser.userId==undefined" class="btn btn-success btn-block" data-ng-click="ctrl.ApplyForJob(job.jobId)" onclick="return confirm('Are You Sure Want to Accept this??');">Apply Now</button>
+                     </div>
+                     <div class="col-md-6">
+                     	
+                     	<label>JOB LOCATION  : {{job.jobLocation}}</label><br>
+                     	<label>EMAIL ADDRESS : {{job.email}}</label><br>
+                    	<label>CONTACT  : {{job.contact}}</label><br>
+                     	
+                    	<button data-ng-show="currentUser.userRole=='Admin'" data-ng-disabled="currentUser.userId==undefined" class="btn btn-danger btn-block" data-ng-click="ctrl.RemoveJob(job.jobId)" onclick="return confirm('Are You Sure Want to Remove this??');">Remove Job</button>
+                     </div>
+                 
+	</div>
+	
+                 </div>
+             </div>
+
+
+
+
+
+

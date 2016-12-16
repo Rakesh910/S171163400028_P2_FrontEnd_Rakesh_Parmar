@@ -1,0 +1,22 @@
+<div class="container-fluid" data-ng-controller="ForumController as ctrl">
+	 <div class="row"> 
+                <h3 class="text-center">LIST OF NEW FORUM'S </h3>
+                 <div class="col-md-12" data-ng-repeat="forum in ctrl.forums | filter:{forumStatus : '1'}| filter:{userId : '!' + currentUser.userId}">
+                    <hr>
+                     <h1><a data-ng-click="ctrl.getSelectedForum(forum.forumId)">{{forum.forumTitle}}</a></h1>
+                         <em data-ng-repeat="user in ctrl.users | filter :{userId : forum.userId}">Posted By :- <a href=""><b>{{user.firstName}} {{user.lastName}}</b></a></em><em class="pull-right">Posted On :-  <a href="">{{forum.forumDate}}</a></em>
+                     <article><p>
+                     
+                     {{forum.forumContent}}
+                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                         ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only 
+                         five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                         of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                         Lorem Ipsum.    
+                         </p></article>
+                           <a class=" btn btn-default  glyphicon glyphicon-thumbs-up" data-ng-click="ctrl.likeForum(forum.forumId)"> {{forum.forumLike}} Likes</a>
+                           <a class=" btn btn-default  glyphicon glyphicon-thumbs-down" data-ng-click="ctrl.dislikeForum(forum.forumId)"> {{forum.forumDislike}} Dislikes</a>
+                           <a class=" btn btn-default  glyphicon glyphicon-comment" data-ng-click="ctrl.getSelectedForum(forum.forumId)"> Comments</a>
+                 </div>
+             </div>
+</div>

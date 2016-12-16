@@ -1,0 +1,39 @@
+<div class="container-fluid" data-ng-controller="UserController as ctrl" style="background-color: #e7e7e7;">
+ <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">USER PROFILE</h4>
+                    
+                    </div>
+                <div class="modal-body">
+                    <center>
+                    <img src="resources/images/user.jpg" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading">{{user.firstName}} {{user.lastName}}</h3>
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Email Address: </strong><br>
+                        {{user.emailId}}</p>
+                    <br>
+                    <p class="text-left"><strong>Contact Number: </strong><br>
+                        {{user.contactNo}}</p>
+                    <br>
+                    <p class="text-left"><strong>Registered As : </strong><br>
+                        {{user.userRole}}</p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <a href="#/chat" class="btn btn-success" data-ng-if="currentUser.userId != user.userId">Send Message</a>
+                    <a href="#/editProfile" class="btn btn-primary" data-ng-if="currentUser.userId == user.userId">Edit Profile</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+        	
+</div>
+
+
+
+    

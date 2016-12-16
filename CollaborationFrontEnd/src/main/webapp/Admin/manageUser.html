@@ -1,0 +1,33 @@
+<div class="container-fluid" data-ng-controller="AdminController as ctrl">
+	 <div class="row"> 
+                <h3 class="text-center">LIST OF NEW BLOG'S </h3>
+                <div data-ng-show="!ctrl.pendingUsers">
+                <hr>
+<p><div class="alert-danger"><h2>Sorry..!! No New User Request Found.</h2></div></p>
+</div>
+                 
+                 <div class="raw" data-ng-repeat="user in ctrl.pendingUsers">
+                    <hr>
+                     <h1>{{user.firstName}} {{user.lastName}}</h1>    
+                     <div class="col-md-2"><img class="thumbnail" src="resources/images/user.jpg" style="height: 140px;"></div>
+                     <div class="col-md-10"><label>Email Address : {{user.emailId}}</label><br>
+                     <label>Contact Number : {{user.contactNo}}</label><br>
+                     <label>Registred As  : {{user.userRole}}</label><br>
+                     <button class="btn btn-success" data-ng-click="ctrl.SelectedapproveUser(user.userId,'A')" onclick="return confirm('Are You Sure Want to Accept this??');">ACCEPT</button>
+               		<button class="btn btn-danger" data-ng-click="ctrl.SelectedapproveUser(user.userId,'R')" onclick="return confirm('Are You Sure Want to Reject this??');">Reject</button>
+                         </div>
+                 </div>
+             </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
